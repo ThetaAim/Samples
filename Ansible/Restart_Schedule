@@ -1,0 +1,21 @@
+- name: Schedule system shutdown using pmset
+  hosts: all
+  gather_facts: no
+  vars:
+    ansible_become: yes
+  tasks:
+
+    - name: Cancel all Scheduals
+      command: "sudo pmset schedule cancelall"
+
+    - name: Cancel All Repeats events
+      command: "sudo pmset repeat cancel"
+
+    - name: ADD Schedule Wake and Restart EveryDay except Saterday
+      command: "sudo pmset repeat restart MTWRFSU 00:01:00 wakeorpoweron MTWRFU 08:00:00"
+
+    - name: Print new Schedule
+      command: "sudo pmset -g sched"
+      register: SCD
+    - debug:
+        var: SCD.stdout_lines  
