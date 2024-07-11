@@ -1,4 +1,4 @@
-#Cancel and Reschedule
+# Remove old and Reschedule
 ---
 - name: Schedule system shutdown using pmset
   hosts: all
