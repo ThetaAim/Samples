@@ -11,8 +11,8 @@ proc color_puts {color text} {
 set user_admin "Administrator"
 set pass "Admin_pass"
 set dfpass "Deep_Pass"
-set tcommand "export DFXPSWD=${Deep_Pass} && /usr/local/bin/deepfreeze thaw --computer --env"
-set fcommand "export DFXPSWD=${Deep_Pass} && /usr/local/bin/deepfreeze freeze --computer --env"
+set tcommand "export DFXPSWD=${dfpass} && /usr/local/bin/deepfreeze thaw --computer --env"
+set fcommand "export DFXPSWD=${dfpass} && /usr/local/bin/deepfreeze freeze --computer --env"
 set restartcmd "echo '$pass' | sudo -S shutdown -r now"
 set IFS "\t"
 
