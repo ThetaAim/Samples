@@ -1,0 +1,40 @@
+# Purpose: Wake machine, Kill, Restart 
+# Note: delegate_to confilicts with Become True 
+---
+- name: Get MAC address of en0 interface
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Execute ifconfig command
+      shell: ifconfig en0 | awk '/ether/ {print $2}' | head -n 1
+      register: mac_address_output
+      changed_when: false
+
+    - name: Extract MAC address
+      set_fact:
+        mac_address: "{{ mac_address_output.stdout | trim }}"  
+      when: mac_address_output.stdout is defined  
+
+    - name: Display extracted MAC address
+      debug:
+        var: mac_address
+
+
+    - name: Wake up remote hosts using Wake-on-LAN
+      community.general.wakeonlan:
+        mac: "{{ mac_address }}"
+      delegate_to: localhost
+
+
+    - name: Execute caffeinate command
+      command: caffeinate -u -d
+      async: 30
+      poll: 0
+   
+    - name: Call Kill Yaml 
+      include_tasks: Kill_Process.yaml
+
+    - name: Restart
+      command: "shutdown -r now"
+      become: yes
+      become_method: sudo
