@@ -7,11 +7,9 @@ proc color_puts {color text} {
 }
 
 set user_admin "Administrator"
-set user_std "student"
 
 # Define the password variable
 set pass "YourPass"
-set pstd "student" 
 
 # Set the Internal Field Separator to tab
 set IFS "\t"
