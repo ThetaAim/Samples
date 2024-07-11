@@ -1,0 +1,75 @@
+#### Print Farm Inventory
+
+all:
+  vars:
+    ansible_user: Administrator
+    #ansible_become: yes
+    #ansible_become_method: sudo
+    ansible_become_pass: "{{ 'YourPass' }}"
+  hosts:
+    Farm01:
+      ansible_host: farm01.local
+    Farm02:
+      ansible_host: farm02.local
+    Farm03:
+      ansible_host: farm03.local
+    Farm04:
+      ansible_host: farm04.local
+    Farm05:
+      ansible_host: farm05.local
+    Farm06:
+      ansible_host: farm06.local
+    Farm07:
+      ansible_host: farm07.local
+    Farm08:
+      ansible_host: farm08.local
+    Farm09:
+      ansible_host: farm09.local
+    Farm10:
+      ansible_host: farm10.local
+    Farm11:
+      ansible_host: farm11.local
+    Farm12:
+      ansible_host: farm12.local
+    Farm13:
+      ansible_host: farm13.local
+    Farm14:
+      ansible_host: farm14.local
+    Farm15:
+      ansible_host: farm15.local
+    Farm16:
+      ansible_host: farm16.local
+    Farm17:
+      ansible_host: farm17.local
+    Farm18:
+      ansible_host: farm18.local
+    Farm19:
+      ansible_host: farm19.local
+    Farm20:
+      ansible_host: farm20.local
+    #Farm21:
+     # ansible_host: farm21.local
+    Farm22:
+      ansible_host: farm22.local
+    Farm23:
+      ansible_host: farm23.local
+    Farm24:
+      ansible_host: farm24.local
+    Farm25:
+      ansible_host: farm25.local
+    Farm26:
+      ansible_host: farm26.local
+    Farm27:
+      ansible_host: farm27.local
+    Farm28:
+      ansible_host: farm28.local
+    Farm29:
+      ansible_host: farm29.local
+    Farm30:
+      ansible_host: farm30.local
+    Farm31:
+      ansible_host: farm31.local
+    Farm32:
+      ansible_host: farm32.local
+    Farm33:
+      ansible_host: farm33.local
