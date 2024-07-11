@@ -1,2 +1,2 @@
-# Samples
-A sample Repo for some of my scripting
+# Examples
+Examples of various Scripting methodologies in bash script and Ansible.
